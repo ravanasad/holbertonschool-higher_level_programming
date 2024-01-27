@@ -4,7 +4,7 @@ def no_c(my_string):
     new_string = ""
     for x in my_string:
         if x in ['c', 'C']:
-            new_string += ' '
+            continue
         else:
             new_string += x
     return new_string
