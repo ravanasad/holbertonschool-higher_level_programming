@@ -7,4 +7,4 @@ def no_c(my_string):
             new_string += ' '
         else:
             new_string += x
-    print("{}".format(new_string))
+    return new_string
