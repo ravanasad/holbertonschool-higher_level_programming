@@ -6,6 +6,6 @@ if __name__ == "__main__":
     if argc == 1:
         print("0 arguments.")
     else:
-        print("{} arguments:".format(argc - 1))
+        print("{} argument{}:".format(argc - 1, '' if argc - 1 == 1 else 's'))
         for i in range(1, argc):
             print("{}: {}".format(i, argv[i]))
