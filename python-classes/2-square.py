@@ -4,7 +4,7 @@
 
 class Square:
     """Square class with size attribute"""
-    def __init__(self, size=0):
+    def __init__(self, size=0) -> None:
         """Initializes the Square class"""
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
