@@ -1,5 +1,9 @@
 #!/usr/bin/python3
+"""Module to divide all elements of a matrix"""
+
+
 def matrix_divided(matrix, div):
+    """Divide all elements of a matrix"""
     if isinstance(matrix, list) is False:
         raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
     if isinstance(div, (int, float)) is False:
