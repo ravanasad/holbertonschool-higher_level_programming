@@ -27,6 +27,11 @@ class TestMaxInteger(unittest.TestCase):
         """Test a list with a single element."""
         one_element = [7]
         self.assertEqual(max_integer(one_element), 7)
+    
+    def test_max_middle(self):
+        """Test for max in the middle"""
+        list = [1, 2, 3, 2, 1]
+        self.assertEqual(max_integer(list), 3)
 
 if __name__ == '__main__':
     unittest.main()
