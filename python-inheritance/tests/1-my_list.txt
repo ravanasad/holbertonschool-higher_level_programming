@@ -1,0 +1,31 @@
+The ``my_list`` module
+=============================
+Testing ``my_list`` function
+-----------------------------
+
+>>> MyList = __import__('1-my_list').MyList
+>>> my_list = MyList()
+>>> my_list.print_sorted()
+[]
+>>> my_list.append(0)
+>>> my_list.extend([1, 2, 3])
+>>> my_list.remove(3)
+>>> my_list.insert(0, -1)
+>>> my_list.append(-3)
+>>> my_list
+[-1, 0, 1, 2, -3]
+>>> my_list.print_sorted()
+[-3, -1, 0, 1, 2]
+>>> my_list.print_sorted()
+[-3, -1, 0, 1, 2]
+>>> my_list = MyList([7, 9, 22, 5])
+>>> x = my_list.print_sorted()
+[5, 7, 9, 22]
+>>> print(x)
+None
+>>> my_list.print_sorted(8)
+Traceback (most recent call last):
+...
+TypeError: print_sorted() takes 1 positional argument but 2 were given
+>>> print(my_list.print_sorted)
+<bound method MyList.print_sorted of [7, 9, 22, 5]>
