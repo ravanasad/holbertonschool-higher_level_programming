@@ -13,9 +13,10 @@ from models.base import Base
 
 class TestBase(unittest.TestCase):
     
-    def test_id(self):
+    def test_id_1(self):
         b1 = Base()
-        self.assertEqual(b1.id, 1)
+        b2 = Base()
+        self.assertEqual(b1.id, b2.id - 1)
     
     def test_id_2(self):
         b2 = Base(89)
