@@ -28,3 +28,9 @@ class Base:
         if ld is None or len(ld) == 0:
             return "[]"
         return json.dumps(ld)
+
+    def from_json_string(js):
+        """returns the list of the JSON string representation json_string"""
+        if js is None or len(js) == 0:
+            return []
+        return json.loads(js)
