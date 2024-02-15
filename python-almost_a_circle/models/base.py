@@ -34,3 +34,14 @@ class Base:
         if js is None or len(js) == 0:
             return []
         return json.loads(js)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """returns an instance with all attributes already set"""
+        if dictionary and dictionary != {}:
+            if cls.__name__ == "Rectangle":
+                obj = cls(10, 10)
+            else:
+                obj = cls(10)
+        obj.update(**dictionary)
+        return obj
