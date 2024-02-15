@@ -186,3 +186,6 @@ class TestRectangle(unittest.TestCase):
     def test_load_from_file_when_file_does_not_exist(self):
         list_output = Rectangle.load_from_file()
         self.assertEqual(list_output, [])
+
+if __name__ == "__main__":
+    unittest.main()
