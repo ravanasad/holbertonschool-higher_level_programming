@@ -1,8 +1,0 @@
-#!/usr/bin/python3
-""" 4-main """
-from models.rectangle import Rectangle
-
-if __name__ == "__main__":
-
-    r1 = Rectangle(2, 2, 0, 0, 0)
-    r1.display()
