@@ -83,6 +83,11 @@ class TestSquare(unittest.TestCase):
         self.assertTrue(os.path.exists("Square.json"))
         os.remove("Square.json")
 
+    def test_save_to_file_none(self):
+        Square.save_to_file(None)
+        self.assertTrue(os.path.exists("Square.json"))
+        os.remove("Square.json")
+
     def test_load_from_file(self):
         test = Square(5, 10, 15, 20)
         test2 = Square(10, 20, 30, 40)
