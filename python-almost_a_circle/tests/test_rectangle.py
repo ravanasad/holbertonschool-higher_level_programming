@@ -25,7 +25,6 @@ class TestRectangle(unittest.TestCase):
         r4 = Rectangle(1, 2, 3, 4, 5)
         self.assertEqual(r4.id, 5)
     
-
     def test_rectangle_errors(self):
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
             Rectangle("1", 2)
@@ -129,9 +128,17 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(list_output[2].id, 91)
     
     def save_to_file_none(self):
+        try:
+            os.remove("Rectangle.json")
+        except:
+            pass
         Rectangle.save_to_file(None)
         with open("Rectangle.json", "r") as output:
             self.assertEqual(output.read(), "[]")
+        try:
+            os.remove("Rectangle.json")
+        except:
+            pass
         Rectangle.save_to_file([])
         with open("Rectangle.json", "r") as output:
             self.assertEqual(output, [])
