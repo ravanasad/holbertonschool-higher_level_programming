@@ -16,8 +16,8 @@ from models.square import Square
 class TestSquare(unittest.TestCase):
 
     def test_square(self):
-        test = Square(0)
-        self.assertEqual(test.size, 0)
+        test = Square(5)
+        self.assertEqual(test.size, 5)
         test = Square(5, 10)
         self.assertEqual(test.x, 10)
         test = Square(5, 10, 15)
@@ -26,6 +26,8 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(test.id, 20)
     
     def test_square_error(self):
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
+            Square(0)
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
             Square("5")
         with self.assertRaisesRegex(ValueError, "width must be > 0"):
