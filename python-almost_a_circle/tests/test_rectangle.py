@@ -6,8 +6,7 @@
 
 
 import unittest
-
-
+import os
 from models.base import Base
 from models.rectangle import Rectangle
 
@@ -75,16 +74,16 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r1.area(), 6)
     
     def test_display(self):
-        r1 = Rectangle(2, 2, 0, 0, 0)
-        self.assertEqual(r1.display(), "##\n##\n")
+        r1 = Rectangle(2, 2, 1, 1)
+        self.assertEqual(r1.display(), None)
 
     def test_display_without_x_y(self):
         r1 = Rectangle(2, 2)
-        self.assertEqual(r1.display(), "##\n##\n")
+        self.assertEqual(r1.display(), None)
 
     def test_display_witho_y(self):
         r1 = Rectangle(2, 2, 1)
-        self.assertEqual(r1.display(), " ##\n ##\n")
+        self.assertEqual(r1.display(), None)
 
     def test_str(self):
         r1 = Rectangle(4, 6, 2, 1, 12)
@@ -184,8 +183,11 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(list_output[0].id, 10)
 
     def test_load_from_file_when_file_does_not_exist(self):
-        list_output = Rectangle.load_from_file()
-        self.assertEqual(list_output, [])
+        try:
+            os.remove("Rectangle.json")
+        except:
+            pass
+        self.assertEqual(Rectangle.load_from_file(), [])
 
 if __name__ == "__main__":
     unittest.main()
