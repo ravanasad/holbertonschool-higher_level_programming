@@ -16,8 +16,8 @@ from models.square import Square
 class TestSquare(unittest.TestCase):
 
     def test_square(self):
-        test = Square(5)
-        self.assertEqual(test.size, 5)
+        test = Square(0)
+        self.assertEqual(test.size, 0)
         test = Square(5, 10)
         self.assertEqual(test.x, 10)
         test = Square(5, 10, 15)
