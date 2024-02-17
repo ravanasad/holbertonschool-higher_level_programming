@@ -127,7 +127,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(list_output[1].id, 90)
         self.assertEqual(list_output[2].id, 91)
     
-    def save_to_file_none(self):
+    def test_save_to_file_none(self):
         try:
             os.remove("Rectangle.json")
         except:
