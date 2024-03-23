@@ -15,7 +15,6 @@ def get_states():
     """
     if len(sys.argv) != 5:
         return
-    
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
