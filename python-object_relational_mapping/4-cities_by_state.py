@@ -8,8 +8,7 @@ def get_states():
     """lists all cities from the database hbtn_0e_4_usa
 
         Args:
-            username, password, database_name
-            state_name -> argv[1], argv[2], argv[3]
+            username, password, database_name -> argv[1], argv[2], argv[3]
     """
     db = MySQLdb.connect(
         host="localhost",
