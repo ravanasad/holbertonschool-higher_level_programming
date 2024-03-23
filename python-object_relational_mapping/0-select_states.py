@@ -1,9 +1,7 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """0-select_states.py: lists all states from the database hbtn_0e_0_usa"""
 import MySQLdb
 import sys
-
-
 
 
 def get_states():
@@ -18,9 +16,10 @@ def get_states():
     rows = cursor.fetchall()
     for row in rows:
         print(row)
-        
+
     cursor.close()
     db.close()
+
 
 if __name__ == "__main__":
     get_states()
