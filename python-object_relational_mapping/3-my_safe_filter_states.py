@@ -13,6 +13,9 @@ def get_states():
             username, password, database_name,
             state_name -> argv[1], argv[2], argv[3], argv[4]
     """
+    if len(sys.argv) != 5:
+        return
+    
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
