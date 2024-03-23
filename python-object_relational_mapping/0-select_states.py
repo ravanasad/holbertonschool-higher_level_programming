@@ -5,16 +5,16 @@ import sys
 
 
 def get_states():
-    """get_states: lists all states from the database hbtn_0e_0_usa
+    """lists all states from the database hbtn_0e_0_usa
 
         Args:
             username, password, database_name -> argv[1], argv[2], argv[3]
     """
     db = MySQLdb.connect(
         host="localhost",
-        port = 3306,
-        user=sys.argv[1], 
-        passwd=sys.argv[2], 
+        port=3306,
+        user=sys.argv[1],
+        passwd=sys.argv[2],
         db=sys.argv[3]
         )
     cursor = db.cursor()
