@@ -14,12 +14,8 @@ def fetch_all():
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    rows = session.query(State).filter(State.name.contains('a'))
-    if rows.count() == 0:
-        print("Nothing")
-    else:
-        for row in rows:
-            print("{}: {}".format(row.id, row.name))
+    for row in session.query(State).filter(State.name.contains('a')):
+        print("{}: {}".format(row.id, row.name))
     session.close()
 
 
