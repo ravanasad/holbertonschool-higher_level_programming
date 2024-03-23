@@ -23,11 +23,11 @@ def get_states():
         db=sys.argv[3]
         )
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states WHERE BINARY name='{:s}'\
-                ORDER BY id ASC".format(sys.argv[4]))
+    cursor.execute("SELECT * FROM states ORDER BY states.id")
     rows = cursor.fetchall()
     for row in rows:
-        print(row)
+        if (sys.argv[4] == row[1]):
+            print(row)
 
     cursor.close()
     db.close()
