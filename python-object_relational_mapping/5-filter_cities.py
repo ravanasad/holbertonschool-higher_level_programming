@@ -28,6 +28,9 @@ def get_states():
                    WHERE s.name = '{:s}'\
                    ORDER BY c.id".format(sys.argv[4]))
     rows = cursor.fetchall()
+    if not rows:
+        print()
+        return
     for i in range(len(rows)):
         if i == len(rows) - 1:
             print(rows[i][0])
