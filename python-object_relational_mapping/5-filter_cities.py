@@ -24,7 +24,7 @@ def get_states():
         )
     cursor = db.cursor()
     cursor.execute("SELECT c.name FROM cities c\
-                   JOIN states s ON c.state_id = s.id\
+                   INNER JOIN states s ON c.state_id = s.id\
                    WHERE s.name = '{:s}'\
                    ORDER BY c.id".format(sys.argv[4]))
     rows = cursor.fetchall()
